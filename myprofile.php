@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="appointment.css">
 </head>
-<body>
+<br>
     <nav class="menu">
         <div class="profile-picture">
             <img src="profile.jpg" alt="John Andrei C. Guzman">
@@ -50,20 +50,44 @@
             <i class="fas fa-out"></i>
         </div>
     </nav>
-    <header class="content">
-    <div class="my-profile">
-            <img src="profile.jpg" alt="My Profile">
+    <div class="content">
+            NAME:
+            <input type="text" name="name" id="name" required>
+
+            AGE:
+            <input type="age" name="age" id="age" required>
+
+            SEX:
+                <select id="sex" name="sex" required>
+                <option value="">Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Others">Others</option>
+                </select>
+
+            BIRTHDAY:
+            <input type="birthday" name="birthday" id="birthday" required>
+
+            ADDRESS:
+            <input type="text" name="address" id="address" required>
+
+            EMAIL:
+            <input type="email" name="email" id="email" required>
+
+            MOBILE NUMBER:
+            <input type="number" name="number" id="number" required>
+
+            USERNAME:
+            <input type="username" name="username" id="username" required>
+
+            DATE CREATED:
+            <input type="date" name="date" id="date" required>
+
+            <div class="edit-profile">
+            <a href="edit-profile.php" class="btn btn-primary">Update Profile</a>
         </div>
-        <div class="my-profile-info">
-            <h2>John Andrei C. Guzman</h2>
-            <p><strong>Email:</strong> aceattacker028@gmail.com</p>
-            <p><strong>Phone:</strong> 0910683527</p>
-            <p><strong>Address:</strong> Concepcion, Balagtas, Bulacan</p>
         </div>
-        <div class="edit-profile">
-            <a href="edit-profile.php" class="btn btn-primary">Edit Profile</a>
-        </div>
+       
   </header>
-  
 </body>
 </html>
