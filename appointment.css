@@ -18,7 +18,8 @@ body {
     flex: 1;
     background-color: #285050;
     padding: 0;
-    padding-top: 2.5%;
+    padding-top: 5%;
+    padding-left: 2%;
 }
 
 .profile-picture {
@@ -211,14 +212,15 @@ p4 {
 .booking-form button{
     margin-top: 10px;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: darkorange;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
 }
 .booking-form button:hover{
-    background-color: #45a049;
+    background-color: orangered;
 }
 
 header {
@@ -257,15 +259,39 @@ header h1 {
 
 .edit-profile {
     text-align: center;
+    margin-left: 36%;
 }
 
 .btn-primary {
-    background-color: #007bff;
     color: #fff;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
     text-decoration: none;
     display: inline-block;
+    font-weight: bold;
+    background-color: darkorange;
+    cursor: pointer;
 }
 
+.btn-primary button:hover{
+    background-color: orangered;
+}
+
+.content-profile{
+    text-align: justify;
+    font-weight: bold;
+    font-size: 125%;
+    padding-left: 15%;
+    padding-top: 20%;
+    flex: 1;
+    background-color: #285050;
+}
+
+.content-profile input, .content-profile select{
+    width: 50%;
+    display: flex;
+    margin-left: 250px;
+    padding: .5%;
+    margin-top: -6%;
+}

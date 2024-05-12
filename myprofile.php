@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="appointment.css">
 </head>
-<br>
+<body>
     <nav class="menu">
         <div class="profile-picture">
             <img src="profile.jpg" alt="John Andrei C. Guzman">
@@ -50,44 +50,42 @@
             <i class="fas fa-out"></i>
         </div>
     </nav>
-    <div class="content">
-            NAME:
-            <input type="text" name="name" id="name" required>
+    <header class="content-profile">
+        <p1>NAME:
+        <input type="text" name="name" id="name" required></p1>
 
-            AGE:
-            <input type="age" name="age" id="age" required>
+        <p1><br>AGE:
+        <input type="age" name="age" id="age" required></br></p1>
 
-            SEX:
-                <select id="sex" name="sex" required>
-                <option value="">Select</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Others">Others</option>
-                </select>
+        <p1>SEX:
+            <select id="sex" name="sex" required>
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Others">Others</option>
+            </select></p1>
 
-            BIRTHDAY:
-            <input type="birthday" name="birthday" id="birthday" required>
+        <p1><br>BIRTHDAY:
+        <input type="birthday" name="birthday" id="birthday" required></br></p1>
 
-            ADDRESS:
-            <input type="text" name="address" id="address" required>
+        <p1>ADDRESS:
+        <input type="text" name="address" id="address" required></p1>
 
-            EMAIL:
-            <input type="email" name="email" id="email" required>
+        <p1><br>EMAIL:
+        <input type="email" name="email" id="email" required></br></p1>
 
-            MOBILE NUMBER:
-            <input type="number" name="number" id="number" required>
+        <p1>MOBILE NUMBER:
+        <input type="number" name="number" id="number" required></p1>
 
-            USERNAME:
-            <input type="username" name="username" id="username" required>
+        <p1><br>USERNAME:
+        <input type="username" name="username" id="username" required></br></p1>
 
-            DATE CREATED:
-            <input type="date" name="date" id="date" required>
+        <p1>DATE CREATED:
+        <input type="date" name="date" id="date" required></p1>
 
-            <div class="edit-profile">
-            <a href="edit-profile.php" class="btn btn-primary">Update Profile</a>
-        </div>
-        </div>
-       
-  </header>
-</body>
+        <br><div class="edit-profile">
+        <a href="edit-profile.php" class="btn btn-primary">Update Profile</br></a>
+</div>
+    
+    </body>
 </html>
