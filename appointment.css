@@ -1,0 +1,270 @@
+body {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    width: 300px;
+    min-height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+}
+
+.content {
+    flex: 1;
+    background-color: #285050;
+    padding: 0;
+    padding-top: 2.5%;
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 3px solid black;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-container {
+    text-align: center;
+    padding-top: 60px;
+}
+
+.c {
+    max-width: 100%;
+    width: 500px;
+    height: 500px;
+    padding: 10px 0;
+    filter: blur(4px) brightness(55%);
+}
+
+
+p {
+    font-family: calibri;
+    font-weight: 900;
+    font-size: 25px;
+    padding-top: 5px;
+    color: #004AAD;
+}
+
+
+.name {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.clinic-name {
+    text-align: center;
+    color: #F1F1F1;
+    font-size: 45px;
+    font-family: calibri;
+    margin-top: 10px;
+}
+
+.btn {
+    background-color: white;
+    color: #004AAD;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    width: 200px;
+}
+
+.btn img {
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+.btn:hover {
+    background-color: #b4c3e4;
+    color: #3d5c7e;
+    margin: 4px -20px;
+    width: 300px;
+}
+
+.navbar {
+    background-color: white;
+    margin-bottom: 0;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin-bottom: 5px;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+h2 { 
+    font-family: calibri;
+    font-weight: 900;
+    font-size: 25px;
+    padding-top: 10px;
+    padding-right: 130px;
+    color: #004AAD;
+}
+
+.e {
+    height: 50px;
+    width: 50px;
+}
+
+.p i {
+    position: relative;
+    top: 10%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    color: #333;
+    padding-right: 210px;
+    font-size: 20px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+.e i {
+    position: relative;
+    bottom: 150%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    color: #333;
+    padding-right: 210px;
+    font-size: 20px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+p3 {
+    position: relative;
+    bottom: 19%;
+    padding-top: 0px;
+    padding-left: 40px;
+    font-family: calibri;
+    font-size: 20px;
+    font-weight: normal;
+    color: #004AAD;
+    
+}
+
+p4 {
+    position: relative;
+    bottom: 13.5%;
+    padding-right: 80px;
+    font-family: calibri;
+    font-size: 20px;
+    font-weight: normal;
+    color: #004AAD;
+    padding-top: 0px;
+}
+
+
+.booking-form{
+    background-color: gray;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 60%;
+    margin: 0 auto;
+}
+.booking-form h3{
+    text-align: center;
+    color: white;
+}
+
+.booking-form p{
+    text-align: center;
+    font-size: 15px;
+    color: white;
+}
+.booking-form form{
+    display: flex;
+    flex-direction: column;
+}
+.booking-form input{
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.booking-form button{
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.booking-form button:hover{
+    background-color: #45a049;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.my-profile {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 3px solid black;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.my-profile-info {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-info h2 {
+    margin-bottom: 0.5rem;
+}
+
+.edit-profile {
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    display: inline-block;
+}
