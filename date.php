@@ -49,38 +49,18 @@
         <div class="l">
             <i class="fas fa-out"></i>
         </div>
+
+        <!-- Next Code in the program where the user choose the code -->
     </nav>
     <header class="content">
         <div class="booking-form">
-            <h3>PLEASE ENTER PATIENTS DETAILS</h3>
-            <p>Fill the form and submit your appoinment. We will contact you as soon as possible</p>
-            <form action="date.php" method="post">
-                <label for="name">Full Name:</label>
-                <input type="text" name="name" id="name" required>
-                <label for="sex">Sex:</label>
-                <select id="sex" name="sex" required>
-                <option value="">Select</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Others">Others</option>
-                </select>
-           
-                <label for="number">Mobile Number:</label>
-                <input type="text" name="number" id="number" required>
-           
-                <label for="age">Age:</label>
-                <input type="age" name="age" id="age" required>
-               
-                <label for="address">Address:</label>
-                <input type="text" name="address" id="address" required>
+            <h3>PLEASE ENTER THE DATE</h3>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <div id="calendar"></div>
+    <label for="date">Choose a date:</label>
+    <input type="date" id="myDate" name="myDate">
 
-                <label for="email">Email Address:</label>
-                <input type="email" name="email" id="email" required>
-
-                <button type="submit">Next</button>
-            </form>
-        </div>
-    </div>
-        
 </body>
 </html>

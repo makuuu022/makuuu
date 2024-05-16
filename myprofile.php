@@ -41,51 +41,34 @@
         <div class="p">
             <i class="fas fa-phone"></i>
         </div>
+        <br>
+
         <p4>0910683527</p4>
         <div class="e">
             <i class="fas fa-envelope"></i>
         </div>
+
+        <br>
+        <br>
         <p3>aceattacker028@gmail.com</p3>
         <div class="l">
             <i class="fas fa-out"></i>
         </div>
     </nav>
-    <header class="content-profile">
-        <p1>NAME:
-        <input type="text" name="name" id="name" required></p1>
-
-        <p1><br>AGE:
-        <input type="age" name="age" id="age" required></br></p1>
-
-        <p1>SEX:
-            <select id="sex" name="sex" required>
-            <option value="">Select</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Others">Others</option>
-            </select></p1>
-
-        <p1><br>BIRTHDAY:
-        <input type="birthday" name="birthday" id="birthday" required></br></p1>
-
-        <p1>ADDRESS:
-        <input type="text" name="address" id="address" required></p1>
-
-        <p1><br>EMAIL:
-        <input type="email" name="email" id="email" required></br></p1>
-
-        <p1>MOBILE NUMBER:
-        <input type="number" name="number" id="number" required></p1>
-
-        <p1><br>USERNAME:
-        <input type="username" name="username" id="username" required></br></p1>
-
-        <p1>DATE CREATED:
-        <input type="date" name="date" id="date" required></p1>
-
-        <br><div class="edit-profile">
-        <a href="edit-profile.php" class="btn btn-primary">Update Profile</br></a>
-</div>
-    
-    </body>
+    <header class="content">
+    <div class="my-profile">
+            <img src="profile.jpg" alt="My Profile">
+        </div>
+        <div class="my-profile-info">
+            <h2>John Andrei C. Guzman</h2>
+            <p><strong>Email:</strong> aceattacker028@gmail.com</p>
+            <p><strong>Phone:</strong> 0910683527</p>
+            <p><strong>Address:</strong> Concepcion, Balagtas, Bulacan</p>
+        </div>
+        <div class="edit-profile">
+            <a href="edit-profile.php" class="btn btn-primary">Edit Profile</a>
+        </div>
+  </header>
+  
+</body>
 </html>

@@ -52,35 +52,22 @@
     </nav>
     <header class="content">
         <div class="booking-form">
-            <h3>PLEASE ENTER PATIENTS DETAILS</h3>
-            <p>Fill the form and submit your appoinment. We will contact you as soon as possible</p>
-            <form action="date.php" method="post">
-                <label for="name">Full Name:</label>
-                <input type="text" name="name" id="name" required>
-                <label for="sex">Sex:</label>
-                <select id="sex" name="sex" required>
-                <option value="">Select</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Others">Others</option>
-                </select>
-           
-                <label for="number">Mobile Number:</label>
-                <input type="text" name="number" id="number" required>
-           
-                <label for="age">Age:</label>
-                <input type="age" name="age" id="age" required>
-               
-                <label for="address">Address:</label>
-                <input type="text" name="address" id="address" required>
-
-                <label for="email">Email Address:</label>
-                <input type="email" name="email" id="email" required>
-
-                <button type="submit">Next</button>
-            </form>
-        </div>
-    </div>
-        
-</body>
-</html>
+            <h1>Choose Time</h1>
+        <div class="time-slots-grid">
+  <button class="btn btn-secondary">8:00 AM - 8:30 AM</button>
+  <button class="btn btn-secondary">8:30 AM - 9:00 AM</button>
+  <button class="btn btn-secondary">9:00 AM - 9:30 AM</button>
+  <button class="btn btn-secondary">9:30 AM - 10:00 AM</button>
+  <button class="btn btn-secondary">10:00 AM - 10:30 AM</button>
+  <button class="btn btn-secondary">10:30 AM - 11:00 AM</button>
+  <button class="btn btn-secondary">11:30 AM - 12:00 NN</button>
+  <button class="btn btn-secondary">12:00 NN - 12:30 PM</button>
+  <button class="btn btn-secondary">12:30 PM - 1:00 PM</button>
+  <button class="btn btn-secondary">1:00 PM - 1:30 PM</button>
+  <button class="btn btn-secondary">1:30 PM - 2:00 PM</button>
+  <button class="btn btn-secondary">2:00 PM - 2:30 PM</button>
+  <button class="btn btn-secondary">2:30 PM - 3:00 PM</button>
+  <button class="btn btn-secondary">3:00 PM - 4:00 PM</button>
+  <button class="btn btn-secondary">4:00 PM - 4:30 PM</button>
+  <button class="btn btn-secondary">4:30 PM - 5:00 PM</button>
+</div>
