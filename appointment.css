@@ -18,7 +18,8 @@ body {
     flex: 1;
     background-color: #285050;
     padding: 0;
-    padding-top: 2.5%;
+    padding-top: 5%;
+    padding-left: 2%;
 }
 
 .profile-picture {
@@ -211,14 +212,15 @@ p4 {
 .booking-form button{
     margin-top: 10px;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: darkorange;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
 }
 .booking-form button:hover{
-    background-color: #45a049;
+    background-color: orangered;
 }
 
 header {
@@ -257,47 +259,87 @@ header h1 {
 
 .edit-profile {
     text-align: center;
+    margin-left: 36%;
 }
 
 .btn-primary {
-    background-color: #007bff;
     color: #fff;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
     text-decoration: none;
     display: inline-block;
+    font-weight: bold;
+    background-color: darkorange;
+    cursor: pointer;
 }
 
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
-  }
-  
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-  }
-  
-.close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
+.btn-primary button:hover{
+    background-color: orangered;
+}
+
+.content-profile{
+    text-align: justify;
     font-weight: bold;
+    font-size: 125%;
+    padding-left: 15%;
+    padding-top: 20%;
+    flex: 1;
+    background-color: #285050;
+}
+
+.content-profile input, .content-profile select{
+    width: 50%;
+    display: flex;
+    margin-left: 250px;
+    padding: .5%;
+    margin-top: -6%;
+}
+.upload{
+    width: 140px;
+    position: relative;
+
   }
-.time-slots-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
+  .upload img{
+    border-radius: 50%;
+    border: 8px solid #DCDCDC;
+    width: 125px;
+    height: 125px;
+  }
+  .upload .rightRound{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #00B4FF;
+    width: 32px;
+    height: 32px;
+    line-height: 33px;
+    text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .upload .leftRound{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: red;
+    width: 32px;
+    height: 32px;
+    line-height: 33px;
+    text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .upload .fa{
+    color: white;
+  }
+  .upload input{
+    position: absolute;
+    transform: scale(2);
+    opacity: 0;
+  }
+  .upload input::-webkit-file-upload-button, .upload input[type=submit]{
+    cursor: pointer;
   }

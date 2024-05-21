@@ -11,7 +11,7 @@
 </head>
 <body>
     <nav class="menu">
-        <div class="profile-picture">
+    <div class="profile-picture">
             <img src="profile.jpg" alt="John Andrei C. Guzman">
         </div>
         <div class="name">
@@ -54,7 +54,7 @@
         <div class="booking-form">
             <h3>PLEASE ENTER PATIENTS DETAILS</h3>
             <p>Fill the form and submit your appoinment. We will contact you as soon as possible</p>
-            <form action="date.php" method="post">
+            <form action="index.php" method="post">
                 <label for="name">Full Name:</label>
                 <input type="text" name="name" id="name" required>
                 <label for="sex">Sex:</label>

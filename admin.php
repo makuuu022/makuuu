@@ -21,17 +21,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $username = $conn->real_escape_string($_POST['username']);
         $password = $conn->real_escape_string($_POST['password']);
 
-        $stmt = $conn->prepare("SELECT * FROM admins WHERE username=? AND password=?");
-        $stmt->bind_param("ss", $username, $password);
+        $stmt = $conn->prepare("SELECT * FROM admins WHERE username=?");
+        $stmt->bind_param("s", $username);
         $stmt->execute();
         $result = $stmt->get_result();
 
         if ($result->num_rows > 0) {
-            header("Location: dashboard.php");
-            exit();
-        } else {
-            $error = "Invalid username or password";
+            $user = $result->fetch_assoc();
+            if (password_verify($password, $user['password'])) {
+                // Password is correct, redirect to dashboard
+                header("Location: dashboard.php");
+                exit();
+            }
         }
+        // Invalid username or password
+        $error = "Invalid username or password";
     }
 }
 ?>
@@ -65,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="checkbox" id="rememberMe" name="rememberMe">
         <label for="rememberMe">Remember Me</label>
         <p><a href="homepage.php">Switch to Admin?</a></p>
-        <p1><a href="forgot_password.php">Forgot password?</a></p1>
+        <p1><a href="forgetpassadmin.php">Forgot password?</a></p1>
         <div class="button-container">
             <button type="submit" name="submit" class="btn">LOGIN</button>
         </div>
@@ -78,6 +82,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </div>
 
-<script src="user.js"></script>
+<script src="useradmin.js"></script>
 </body>
 </html>

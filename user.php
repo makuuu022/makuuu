@@ -19,16 +19,21 @@ $stmt = null;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['username']) && isset($_POST['password'])) {
         $username = $conn->real_escape_string($_POST['username']);
-        $password = $conn->real_escape_string($_POST['password']);
+        $password = $_POST['password']; // Keep it plain for now, we will hash it later
 
-        $stmt = $conn->prepare("SELECT * FROM userlogin WHERE username=? AND password=?");
-        $stmt->bind_param("ss", $username, $password);
+        $stmt = $conn->prepare("SELECT * FROM userlogin WHERE username=?");
+        $stmt->bind_param("s", $username);
         $stmt->execute();
         $result = $stmt->get_result();
 
         if ($result->num_rows > 0) {
-            header("Location: dashboard.php");
-            exit();
+            $user = $result->fetch_assoc();
+            if (password_verify($password, $user['password'])) {
+                header("Location: dashboard.php");
+                exit();
+            } else {
+                $error = "Invalid username or password";
+            }
         } else {
             $error = "Invalid username or password";
         }
@@ -56,15 +61,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php endif; ?>
     <form method="POST" action="">
         <div class="input-container">
-            <input type="text" class="button-container" id="username" name="username" placeholder="Username">
+            <input type="text" class="button-container" id="username" name="username" placeholder="Username" required>
             <div class="password-container">
-                <input type="password" class="button-container" id="password" name="password" placeholder="Password">
+                <input type="password" class="button-container" id="password" name="password" placeholder="Password" required>
                 <i class="fas fa-eye" id="togglePassword" onclick="togglePassword('password')"></i>
             </div>
         </div>
         <input type="checkbox" id="rememberMe" name="rememberMe">
         <label for="rememberMe">Remember Me</label>
-        <p>Don't have an account?<a href="signup.php">Sign up</a></p>
+        <p>Don't have an account? <a href="signup.php">Sign up</a></p>
         <p1><a href="forgetpass.php">Forgot password?</a></p1>
         <p2><a href="homepage.php">Switch to Admin?</a></p2>
         <div class="button-container">
@@ -79,6 +84,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </div>
 
-<script src="user.js"></script>
+<script src="useradmin.js"></script>
 </body>
 </html>

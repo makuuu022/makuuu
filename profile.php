@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="dashboards.css">
+    <link rel="stylesheet" href="profile.css">
 </head>
 <body>
     <nav class="menu">
@@ -62,11 +62,45 @@
     <header class="content">
         <div class="image-container">
             <img class="c" src="logo.png" alt="Logo">
+            <img class="b" src="noprofil.jpg" alt="Profile Picture">
         </div>
-        <div class="clinic-name">
-            Concepcion Balagtas Dichoso Lying Maternity Clinic
-        </div>
-    </header>
+        <div class="content-profile">
+        <p6>NAME:
+        <input type="text" name="name" id="name" required></p6>
+
+        <p6><br>AGE:
+        <input type="age" name="age" id="age" required></br></p6>
+
+        <p6>SEX:
+            <select id="sex" name="sex" required>
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Others">Others</option>
+            </select></p6>
+
+        <p6><br>BIRTHDAY:
+        <input type="birthday" name="birthday" id="birthday" required></br></p6>
+
+        <p6>ADDRESS:
+        <input type="text" name="address" id="address" required></p6>
+
+        <p6><br>EMAIL:
+        <input type="email" name="email" id="email" required></br></p6>
+
+        <p6>MOBILE NUMBER:
+        <input type="number" name="number" id="number" required></p6>
+
+        <p6><br>USERNAME:
+        <input type="username" name="username" id="username" required></br></p6>
+
+        <p6>DATE CREATED:
+        <input type="date" name="date" id="date" required></p6>
+
+        <br><div class="edit-profile">
+        <a href="edit-profile.php" class="btn btn-primary">Update Profile</br></a>
+</div>
+    </div>
       
 </body>
 </html>

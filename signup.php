@@ -1,3 +1,58 @@
+<?php
+// Include database connection
+include 'conn.php';
+
+// Function to display error message
+function displayError($error) {
+    echo '<div class="alert alert-danger" role="alert">' . $error . '</div>';
+}
+
+// Check if the form is submitted
+if (isset($_POST['register_btn'])) {
+    // Retrieve form data
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirm_password'];
+    $pp = $_FILES['file']['name'];
+
+    // Check if passwords match
+    if ($password !== $confirm_password) {
+        $error = "Passwords do not match.";
+    } else {
+        // Hash the password
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+        // Prepare and execute the SQL statement to insert data into the database
+        $stmt = $conn->prepare("INSERT INTO userlogin (username, password, email, pp) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $username, $hashed_password, $email, $pp);
+
+        // Check if the uploads directory exists, if not, create it
+        if (!file_exists('uploads')) {
+            mkdir('uploads', 0777, true);
+        }
+
+        // Upload profile picture
+        $target_dir = "uploads/";
+        $target_file = $target_dir . basename($_FILES["file"]["name"]);
+        move_uploaded_file($_FILES["file"]["tmp_name"], $target_file);
+
+        if ($stmt->execute()) {
+            // Registration successful
+            $success_msg = "Registration successful!";
+            // Redirect to user.php after 2 seconds
+            header("refresh:2;url=user.php");
+            exit();
+        } else {
+            $error = "Error: " . $stmt->error;
+        }
+
+        $stmt->close();
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,80 +62,45 @@
     <title>Concepcion Balagtas Dichoso Lying Maternity Clinic</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="signup.css ">
+    <link rel="stylesheet" href="signup.css">
 </head>
 <body>
-    <div class="menu1">
-       <h1>SIGN UP HERE!</h1>
-       <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-           <div class="input-container">
-               <input type="text" class="button-container" id="username" name="username" placeholder="Enter Username">
-               <input type="text" class="button-container" id="email" name="email" placeholder="Enter Email">
-               <div class="password-container">
-                   <input type="password" class="button-container" id="password" name="password" placeholder="Password">
-                   <i class="fas fa-eye" id="togglePassword1" onclick="togglePassword('password')"></i>
-               </div>
-               <div class="password-container">
-               <input type="password" class="button-container" id="password" name="password" placeholder="Password">
-                   <i class="fas fa-eye" id="togglePassword1" onclick="togglePassword('password')"></i>
-               </div>
-           </div>
-           <p>Already have an account? <a href="user.php">Sign In</a></p>
-           <div class="button-container">
-               <button type="submit" class="btn" name="register_btn">REGISTER</button>
-           </div>
-       </form>
-    </div>
-    
-    <div class="content">
-        <div class="image-container">
-            <img src="logo.png" alt="Logo">
+<div class="menu">
+    <h1>Sign Up Here!</h1>
+    <?php if (isset($success_msg)): ?>
+    <div class="alert alert-success" role="alert"><?php echo $success_msg; ?></div>
+<?php endif; ?>
+    <form method="POST" action="" enctype="multipart/form-data">
+        <div class="input-container">
+            <input type="text" class="button-container" id="username" name="username" placeholder="Enter Username" required>
+            <input type="text" class="button-container" id="email" name="email" placeholder="Enter Email" required>
+            <div class="password-container">
+                <input type="password" class="button-container" id="password" name="password" placeholder="Enter Password" required>
+                <i class="fas fa-eye" id="togglePassword1" onclick="togglePassword('password')"></i>
+            </div>
+            <div class="password-container">
+                <input type="password" class="button-container" id="confirm_password" name="confirm_password" placeholder="Re-enter Password" required>
+                <i class="fas fa-eye" id="togglePassword2" onclick="togglePassword('confirm_password')"></i>
+            </div>
+            <div class="file-container">
+                <input type="file" class="file-container1" id="file" name="file" accept=".jpg, .jpeg, .png" required>
+            </div>
         </div>
+        <p>Profile Picture</p>
+        <p>Already have an account? <a href="user.php">Sign In</a></p>
+        <div class="button-container">
+            <button type="submit" class="btn" name="register_btn">REGISTER</button>
+        </div>
+    </form>
+</div>
+
+
+<div class="content">
+    <div class="image-container">
+        <img src="logo.png" alt="Logo">
     </div>
-    
-    <script src="signup.js"></script>
+</div>
+
+<script src="signup.js"></script>
 </body>
 </html>
-
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $confirm_password = $_POST['confirm_password'];
-
-    $servername = "localhost";
-    $db_username = "root";
-    $db_password = "";
-    $dbname = "finalproject";
-
-    $conn = new mysqli($servername, $db_username, $db_password, $dbname);
-
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    if (empty($username) || empty($email) || empty($password) || empty($confirm_password)) {
-        echo "All fields are required.";
-        exit;
-    }
-
-    if ($password != $confirm_password) {
-        echo "Passwords do not match.";
-        exit;
-    }
-
-    $sql = "INSERT INTO userlogin (username, email, password) VALUES (?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-   $stmt->bind_param("sss", $username, $email, $password);
-
-    if ($stmt->execute()) {
-        echo "New successfully registered";
-    } else {
-        echo "Error: ". $sql. "<br>". $conn->error;
-    }
-
-    $stmt->close();
-    $conn->close();
-}
-?>

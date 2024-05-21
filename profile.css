@@ -17,9 +17,9 @@ body {
 .content {
     flex: 1;
     background-color: #285050;
-    padding: 0;
-    padding-top: 5%;
+    padding-top: 1%;
     padding-left: 2%;
+    flex-direction: row;
 }
 
 .profile-picture {
@@ -39,14 +39,13 @@ body {
 
 .image-container {
     text-align: center;
-
 }
 
 .c {
     max-width: 100%;
-    width: 500px;
-    height: 500px;
-    padding: 10px 0;
+    width: 800px;
+    height: 800px;
+    opacity: 0.1;
 }
 
 
@@ -182,3 +181,27 @@ p4 {
 }
 
 
+.b {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid white;
+    top: 20%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+}
+
+p6 {
+    color: white;
+    font-weight: bold;
+}
+
+.content-profile input, .content-profile select{
+    width: 50%;
+    display: flex;
+    margin-left: 250px;
+    padding: .5%;
+    margin-top: -6%;
+}
